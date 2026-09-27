@@ -1,0 +1,124 @@
+/* src/components/Bumpups.css */
+
+.bumpups-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 400px);
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1rem 0;
+  }
+  
+  .card-link {
+    display: block;
+    text-decoration: none;
+  }
+  
+  .card {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    background: var(--color-card-light);
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px var(--color-border-shadow);
+    transition: transform 0.24s ease, box-shadow 0.24s ease;
+  }
+  .bumpups-header a {
+    text-decoration: none;
+    color: var(--color-text);
+  }
+  
+  .bumpups-header-highlight {
+    color: var(--color-highlight-secondary);
+  }
+  
+  
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 8px var(--color-border-shadow);
+  }
+  
+  /* light cards */
+  .card-1,
+  .card-4 {
+    background: var(--color-card-light);
+    color: var(--color-text);
+  }
+  
+  /* dark cards */
+  .card-2,
+  .card-3 {
+    background: var(--color-card-dark);
+    color: #fff;
+  }
+  
+  .card-content {
+    flex: 1;
+  }
+  
+  .card-title span {
+    display: inline-block;
+    background: var(--color-highlight-secondary);
+    color: #fff;
+    padding: 0.25em 0.5em;
+    border-radius: 4px;
+    font-size: 1.25rem;
+    line-height: 1.2;
+  }
+  
+  .learn-more {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  
+  /* ensure learn-more text contrasts on dark cards */
+  .card-2 .learn-more,
+  .card-3 .learn-more {
+    color: #fff;
+  }
+  
+  .learn-more-icon {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--color-card-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+    transition: transform 0.3s ease;
+  }
+  
+  /* light icon circle on dark cards */
+  .card-2 .learn-more-icon,
+  .card-3 .learn-more-icon {
+    background: #fff;
+  }
+  
+  /* dark arrow on white circle */
+  .card-2 .learn-more-icon svg,
+  .card-3 .learn-more-icon svg {
+    color: var(--color-card-dark);
+  }
+  
+  .learn-more:hover .learn-more-icon {
+    transform: translateX(4px);
+  }
+  
+  @keyframes cool-bounce {
+    0%   { transform: rotate(-15deg) scale(1); }
+    30%  { transform: rotate(10deg)  scale(1.25); }
+    60%  { transform: rotate(-10deg) scale(1.15); }
+    100% { transform: rotate(-15deg) scale(1); }
+  }
+  
+  .card-image {
+    margin-left: 1rem;
+  }
+  
+  .card-image svg {
+    color: var(--color-text);
+  }
+  

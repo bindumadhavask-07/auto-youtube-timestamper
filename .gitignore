@@ -1,0 +1,102 @@
+# ──────────────────────────────────────────────────────────────
+# Node modules & package manager files
+# ──────────────────────────────────────────────────────────────
+/node_modules
+/.pnp
+.pnp.js
+
+# ──────────────────────────────────────────────────────────────
+# Test coverage reports
+# ──────────────────────────────────────────────────────────────
+/coverage
+
+# ──────────────────────────────────────────────────────────────
+# Production build output
+# ──────────────────────────────────────────────────────────────
+/build
+
+# ──────────────────────────────────────────────────────────────
+# Logs & debug output
+# ──────────────────────────────────────────────────────────────
+firebase-debug.log*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.firebase/
+
+# ──────────────────────────────────────────────────────────────
+# Environment variable files
+# ──────────────────────────────────────────────────────────────
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ──────────────────────────────────────────────────────────────
+# Secrets & credential files
+# ──────────────────────────────────────────────────────────────
+# SSL/TLS certs and keys
+*.pem
+*.key
+*.crt
+*.p12
+*.jks
+*.pfx
+
+# JSON-based service account or client secrets
+serviceAccountKey.json
+client_secret.json
+*-credentials.json
+aws-credentials.json
+google-services.json
+
+# AWS Amplify / Firebase exports (often contain API keys)
+aws-exports.js
+*.firebase/*.json
+
+# NPM/Yarn auth tokens
+.npmrc
+.yarnrc
+.yarnrc.yml
+
+# ──────────────────────────────────────────────────────────────
+# IDE & editor settings/configs
+# ──────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+
+# ──────────────────────────────────────────────────────────────
+# Editor swap, backup & workspace files
+# ──────────────────────────────────────────────────────────────
+*~
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# ──────────────────────────────────────────────────────────────
+# OS system files
+# ──────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ──────────────────────────────────────────────────────────────
+# Terraform state & modules
+# ──────────────────────────────────────────────────────────────
+*.tfstate
+*.tfstate.*
+.terraform/
+
+# ──────────────────────────────────────────────────────────────
+# Docker Compose override files
+# ──────────────────────────────────────────────────────────────
+docker-compose.override.yml
+
+# ──────────────────────────────────────────────────────────────
+# Local database files
+# ──────────────────────────────────────────────────────────────
+*.sqlite
+*.db
+*.db-journal

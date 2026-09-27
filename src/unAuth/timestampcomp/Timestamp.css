@@ -1,0 +1,313 @@
+/* src/unAuth/components/Timestamp.css */
+
+.timestamp-container {
+  background: var(--color-card-dark);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--color-border-shadow);
+  margin: 1.5rem 0;
+  /* reserve space for 16:9 preview + title */
+  min-height: 700px;
+}
+
+.timestamp-header {
+  margin: 0 0 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.timestamp-description {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  color: #ddd;
+}
+
+.timestamp-description a {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px dotted #fff;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.timestamp-description a:hover {
+  color: var(--color-highlight);
+  border-color: var(--color-highlight);
+}
+
+/* form wrapper */
+.timestamp-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 1) make the input/select/button row flex */
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative; /* keep for the url-icon */
+  width: 100%;
+}
+
+/* icon inside the input */
+.url-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 1rem;
+}
+
+/* 2) text input grows to fill */
+.timestamp-input {
+  flex: 1;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  box-sizing: border-box;
+  border: 1px solid var(--color-border-shadow);
+  border-radius: 4px;
+  background: var(--color-card-light);
+  color: var(--color-text);
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.timestamp-input:focus {
+  outline: none;
+  border-color: var(--color-highlight);
+}
+
+/* 3) language selector as a normal flex child */
+.language-select {
+  flex: none;
+  width: auto;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  border: 1px solid var(--color-border-shadow);
+  border-radius: 4px;
+  background: var(--color-card-light);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.language-select:focus {
+  outline: none;
+  box-shadow: none;
+  /* optionally keep a subtle border-change instead of blue */
+  border-color: var(--color-border-shadow);
+}
+
+/* 4) submit button as normal flex child */
+.timestamp-submit {
+  flex: none;
+  width: auto;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: var(--color-highlight);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: filter 0.15s ease, transform 0.15s ease, background 0.2s ease;
+}
+
+.timestamp-submit:hover {
+  filter: brightness(1.1);
+  transform: translateX(-2px);
+}
+
+.timestamp-submit:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.timestamp-submit.invalid {
+  background: rgba(220, 38, 38, 0.85);
+}
+
+.timestamp-submit.debouncing {
+  opacity: 0.5;
+  /* adjust transparency if desired */
+}
+
+.timestamp-error {
+  margin-top: 0.75rem;
+  display: flex;
+  align-items: flex-start;
+  padding: 0.75rem 1rem;
+  background-color: rgba(255, 77, 79, 0.1);
+  border: 1px solid rgba(255, 77, 79, 0.4);
+  border-radius: 6px;
+  color: #ff4d4f;
+  font-size: 0.875rem;
+}
+
+.error-icon {
+  margin-right: 0.5rem;
+  margin-top: 2px;
+  color: #ff4d4f;
+}
+
+.timestamp-error span {
+  line-height: 1.4;
+}
+
+.timestamp-error a {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px dotted currentColor;
+  font-weight: 600;
+}
+
+.timestamp-error a:hover {
+  border-color: #fff;
+  color: #fff;
+}
+
+/* stabilize output area height */
+.timestamp-output {
+  min-height: 280px;
+}
+
+/* video preview */
+.video-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  animation: fadeIn 0.5s;
+}
+
+.video-thumbnail {
+  max-width: 420px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  margin-bottom: 1rem;
+  background: #111;
+}
+
+.video-title {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 0.5rem;
+  word-break: break-word;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* loading skeletons */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.skeleton-thumbnail {
+  background: linear-gradient(
+    90deg,
+    rgba(40, 40, 40, 1) 25%,
+    rgba(60, 60, 60, 1) 50%,
+    rgba(40, 40, 40, 1) 75%
+  );
+  background-size: 200% 100%;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 16 / 9;
+}
+
+.shimmer {
+  animation: shimmer 2.5s infinite;
+}
+
+.loader-icon {
+  font-size: 2rem;
+  opacity: 0.8;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.timer-icon {
+  margin-right: 0.5rem;
+  margin-top: 2px;
+  color: #ff4d4f;
+}
+
+/* YouTube icon style */
+.youtube-icon {
+  display: inline-block;
+  color: #ff0000;
+  background-color: #ffffff;
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+}
+
+/* MOBILE ADJUSTMENTS */
+@media (max-width: 768px) {
+  .input-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .timestamp-input,
+  .language-select,
+  .timestamp-submit {
+    width: 100%;
+    margin: 0;
+  }
+
+  .timestamp-input {
+    font-size: 0.85rem;
+    padding: 0.6rem 1rem 0.6rem 2rem;
+  }
+
+  .language-select,
+  .timestamp-submit {
+    font-size: 0.85rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .timestamp-header {
+    font-size: 1.2rem;
+  }
+
+  .timestamp-description {
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+
+  .video-title {
+    font-size: 1rem;
+  }
+
+  .url-icon {
+    display: none;
+  }
+}

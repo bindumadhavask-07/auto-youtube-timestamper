@@ -1,0 +1,4 @@
+firebase-functions @ git+https://github.com/firebase/firebase-functions-python.git
+firebase-admin>=5.0.0
+python-dotenv
+requests

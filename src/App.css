@@ -1,0 +1,38 @@
+:root {
+  --color-highlight: #3ea5fd;
+  --color-highlight-secondary: #1cc391;
+  --color-page-bg: #282828;
+  --color-container-bg: #282828;
+  --color-nav-bg: #202020;
+  --color-card-light: #282828;
+  --color-card-dark: #202020;
+  --color-text: #fff;
+  --color-border-shadow: rgba(0, 0, 0, 0.5);
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--color-page-bg);
+  color: var(--color-text);
+}
+
+.app-structure-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background: var(--color-container-bg);
+  padding: 0.5rem 2.5rem;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .app-structure-container {
+    /* from 0.5rem 2.5rem → 0.5rem 1rem */
+    padding: 0.5rem 1rem;
+  }
+}

@@ -1,0 +1,132 @@
+/* src/unAuth/components/StampPop.css */
+.stamppop-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.stamppop-container {
+  background: var(--color-card-dark);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--color-border-shadow);
+  width: 90%;
+  max-width: 480px;
+  border: 0.5px solid #ccc;
+}
+
+.stamppop-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stamppop-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.stamppop-close {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.stamppop-content {
+  margin-top: 1rem;
+}
+
+.stamppop-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.stamppop-item {
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: baseline;
+}
+
+.timestamp-link {
+  color: var(--color-highlight);
+  text-decoration: none;
+  margin-right: 0.5rem;
+  font-weight: 600;
+}
+
+.timestamp-link:hover {
+  text-decoration: underline;
+}
+
+.timestamp-desc {
+  color: #ddd;
+  font-size: 1rem;
+  word-break: break-word;
+  flex: 1;
+}
+
+.copy-button {
+  margin-top: 1rem;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: #fff;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.copy-button:hover:not(:disabled) {
+  background: #f7f7f8;
+  transform: translateY(-1px);
+}
+
+.copy-button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+@keyframes copyPop {
+  0%   { transform: scale(1); }
+  30%  { transform: scale(1.2); }
+  60%  { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+/* 2. when the button gains .copied, run the pop */
+.copy-button.copied {
+  animation: copyPop 0.35s ease-out;
+}
+
+.stamppop-footer {
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.stamppop-footer-text {
+  color: #aaa;
+  font-size: 0.75rem;
+  line-height: 1.2;
+}
+.stamppop-footer-text a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.stamppop-footer-text a:hover {
+  text-decoration: underline;
+}

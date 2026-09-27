@@ -1,0 +1,41 @@
+/* src/unAuth/LandingPage.css */
+
+.landing-page-container {
+    width: 100%;
+  }
+  
+  .landing-content-wrapper {
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin: 0 auto;
+    padding: 2rem 2.5rem;
+    box-sizing: border-box;
+    gap: 3rem;
+  }
+  
+  .landing-content-wrapper h1 {
+    color: #222f3e;
+    font-size: 4rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 2.5rem 0 3rem 0;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  
+  .section-divider {
+    width: 100%;
+    border-top: 3px dashed #fff;
+    margin: 0; /* already spaced by the flex gap */
+    opacity: 0.7;
+  }
+
+  @media (max-width: 600px) {
+    .landing-content-wrapper {
+      /* from 2rem 2.5rem → 1rem 1rem */
+      padding: 1rem;
+      /* you can also tighten the vertical gap if you like */
+      gap: 2rem; 
+    }
+  }

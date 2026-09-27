@@ -1,0 +1,190 @@
+/* src/unAuth/components/VideoList.css */
+
+.video-list-container {
+  margin-top: 2rem;
+  background: var(--color-card-dark);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--color-border-shadow);
+  border: 0.5px solid #ccc;
+}
+
+.video-list-header {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.reload-button {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+  transition: filter 0.2s ease;
+}
+.reload-button:hover {
+  filter: brightness(1.2);
+}
+
+.video-list-empty {
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+.video-list-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.video-list-thumb-link {
+  display: block;
+  margin-right: 1rem;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.video-list-thumb {
+  width: 120px;
+  height: 68px;
+  object-fit: cover;
+  background: #111;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+.video-list-thumb:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.video-list-info {
+  flex: 1;
+}
+
+.video-list-title {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  word-break: break-word;
+}
+
+.video-list-date {
+  color: #aaa;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.video-list-button {
+  background: var(--color-highlight);
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+.video-list-button:hover {
+  filter: brightness(1.1);
+}
+
+/* Pagination styling with white-hued arrows */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
+
+.pagination button {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: filter 0.2s ease;
+  color: #fff; /* white arrow */
+  font-size: 1rem;
+}
+
+.pagination button:hover:not(:disabled) {
+  filter: brightness(1.3);
+}
+
+.pagination button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.pagination span {
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  .video-list-container {
+    padding: 0.5rem;               /* tighten container padding */
+  }
+
+  .video-list-header {
+    justify-content: center;       /* center the “History” header */
+    font-size: 1.2rem;             /* scale down a bit */
+  }
+
+  .video-list-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    border-radius: 6px;
+    background: var(--color-card-light);
+  }
+
+  .video-list-thumb-link {
+    margin: 0;                     /* remove right-margin */
+    width: 100%;                   /* stretch thumbnail container */
+    max-width: 100%;
+  }
+
+  .video-list-thumb {
+    width: 100%;                   /* full-width video thumbnail */
+    height: auto;
+    object-fit: cover;
+  }
+
+  .video-list-info {
+    width: 100%;
+  }
+
+  .video-list-title {
+    font-size: 0.95rem;
+  }
+
+  .video-list-date {
+    font-size: 0.8rem;
+  }
+
+  .video-list-button {
+    width: 100%;                   /* full-width action button */
+    text-align: center;
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .pagination {
+    display: flex;
+    flex-direction: row;     /* keep arrows + text in a row */
+    justify-content: center; /* center them */
+    gap: 0.5rem;             /* small gap between buttons and text */
+  }
+
+  .pagination span {
+    font-size: 0.85rem;
+  }
+}
